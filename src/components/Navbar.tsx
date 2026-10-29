@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { PERSONAL_INFO } from '../data/resumeData';
 import { Mail, Menu, X } from 'lucide-react';
-import { GithubIcon, LinkedinIcon } from './icons';
+import { GithubIcon } from './icons';
 
 export const Navbar: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -58,15 +58,6 @@ export const Navbar: React.FC = () => {
             <GithubIcon className="w-5 h-5" />
           </a>
           <a
-            href={PERSONAL_INFO.linkedin}
-            target="_blank"
-            rel="noreferrer"
-            aria-label="LinkedIn Profile"
-            className="p-2 rounded-lg text-slate-400 hover:text-slate-100 hover:bg-slate-800 transition-colors"
-          >
-            <LinkedinIcon className="w-5 h-5" />
-          </a>
-          <a
             href="#contact"
             className="px-4 py-2 rounded-lg text-sm font-medium bg-gradient-to-r from-indigo-600 to-cyan-600 hover:from-indigo-500 hover:to-cyan-500 text-white shadow-md shadow-indigo-600/20 transition-all hover:scale-[1.02] active:scale-[0.98]"
           >
@@ -107,14 +98,6 @@ export const Navbar: React.FC = () => {
               className="flex items-center gap-2 text-sm text-slate-300 hover:text-white"
             >
               <GithubIcon className="w-4 h-4" /> GitHub
-            </a>
-            <a
-              href={PERSONAL_INFO.linkedin}
-              target="_blank"
-              rel="noreferrer"
-              className="flex items-center gap-2 text-sm text-slate-300 hover:text-white"
-            >
-              <LinkedinIcon className="w-4 h-4" /> LinkedIn
             </a>
             <a
               href={`mailto:${PERSONAL_INFO.email}`}

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { PERSONAL_INFO } from '../data/resumeData';
 import { Mail, Phone, MapPin, Copy, Check, Send } from 'lucide-react';
-import { GithubIcon, LinkedinIcon } from './icons';
+import { GithubIcon } from './icons';
 
 export const ContactSection: React.FC = () => {
   const [copiedEmail, setCopiedEmail] = useState(false);
@@ -118,15 +118,6 @@ export const ContactSection: React.FC = () => {
               aria-label="GitHub Profile"
             >
               <GithubIcon className="w-5 h-5" />
-            </a>
-            <a
-              href={PERSONAL_INFO.linkedin}
-              target="_blank"
-              rel="noreferrer"
-              className="p-2.5 rounded-xl bg-slate-800 text-slate-300 hover:text-white hover:bg-slate-700 transition-colors"
-              aria-label="LinkedIn Profile"
-            >
-              <LinkedinIcon className="w-5 h-5" />
             </a>
           </div>
         </div>
