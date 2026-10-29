@@ -37,8 +37,8 @@ export interface SkillCategory {
 
 export const PERSONAL_INFO = {
   name: 'Ritik Bansal',
-  title: 'React Native & Mobile Developer | Data Analyst',
-  headline: 'Building High-Performance Mobile Applications & Scalable Data Solutions',
+  title: 'React Native & Mobile Application Developer',
+  headline: 'Building High-Performance, Offline-First Mobile Applications with React Native & TypeScript',
   location: 'Indore, India',
   phone: '+91 9977784574',
   email: 'bansalritik25@gmail.com',
@@ -180,15 +180,16 @@ export const RESUME_DATA_PROJECTS: ProjectItem[] = [
 export const EXPERIENCES: ExperienceItem[] = [
   {
     company: 'Freelance',
-    role: 'Data Analyst & Developer',
+    role: 'React Native & Mobile Developer',
     period: 'Mar 2026 – Present',
     location: 'Remote',
     bullets: [
-      'Deliver analytics solutions using Python, SQL, PostgreSQL, and Power BI, including data preparation, exploratory analysis, KPI reporting, and dashboard development.',
-      'Design and optimize PostgreSQL queries and data models to support reliable, reusable reporting workflows and analytical use cases.',
-      'Develop data-driven applications and prototypes using Flutter and API-based integrations, translating functional requirements into practical user-facing solutions.',
+      'Architect and build production-ready, cross-platform iOS and Android mobile applications using React Native, Expo, and strict TypeScript.',
+      'Implement offline-first client architectures leveraging SQLite, AsyncStorage, and TanStack Query v5 with optimistic UI updates and background synchronization queues.',
+      'Integrate native device hardware modules including biometric authentication, audio recording engines, Google Maps telemetry, and gesture interactions.',
+      'Translate complex product requirements and Figma design systems into responsive, pixel-perfect, 60fps mobile interfaces with dark/light themes and haptic feedback.',
     ],
-    skills: ['Python', 'SQL', 'PostgreSQL', 'Power BI', 'Flutter', 'REST APIs', 'KPI Reporting'],
+    skills: ['React Native', 'Expo SDK', 'TypeScript', 'TanStack Query', 'Zustand', 'SQLite / Offline Sync', 'Native APIs', 'REST APIs'],
   },
   {
     company: 'Masai School',

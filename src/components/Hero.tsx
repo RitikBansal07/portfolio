@@ -14,7 +14,7 @@ export const Hero: React.FC = () => {
           {/* Availability Badge */}
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-300 text-xs sm:text-sm font-medium mb-6 animate-pulse">
             <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
-            <span>Available for Mobile Developer & Data Roles</span>
+            <span>Available for React Native & Mobile Roles</span>
           </div>
 
           {/* Main Title */}
@@ -23,7 +23,7 @@ export const Hero: React.FC = () => {
           </h1>
 
           <p className="text-xl sm:text-2xl font-semibold text-slate-200 mb-4">
-            React Native & Mobile App Engineer | Data Analyst
+            React Native & Mobile Application Engineer
           </p>
 
           <p className="text-base sm:text-lg text-slate-400 leading-relaxed mb-8">
