@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { PERSONAL_INFO } from '../data/resumeData';
-import { Download, Mail, Menu, X } from 'lucide-react';
+import { Mail, Menu, X } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './icons';
 
 export const Navbar: React.FC = () => {
@@ -67,25 +67,15 @@ export const Navbar: React.FC = () => {
             <LinkedinIcon className="w-5 h-5" />
           </a>
           <a
-            href={PERSONAL_INFO.resumePdfUrl}
-            download="Ritik_Bansal_Resume.pdf"
-            className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium bg-gradient-to-r from-indigo-600 to-cyan-600 hover:from-indigo-500 hover:to-cyan-500 text-white shadow-md shadow-indigo-600/20 transition-all hover:scale-[1.02] active:scale-[0.98]"
+            href="#contact"
+            className="px-4 py-2 rounded-lg text-sm font-medium bg-gradient-to-r from-indigo-600 to-cyan-600 hover:from-indigo-500 hover:to-cyan-500 text-white shadow-md shadow-indigo-600/20 transition-all hover:scale-[1.02] active:scale-[0.98]"
           >
-            <Download className="w-4 h-4" />
-            <span>Resume</span>
+            Contact
           </a>
         </div>
 
         {/* Mobile menu toggle */}
         <div className="md:hidden flex items-center gap-2">
-          <a
-            href={PERSONAL_INFO.resumePdfUrl}
-            download="Ritik_Bansal_Resume.pdf"
-            className="p-2 rounded-lg bg-indigo-600 text-white text-xs flex items-center gap-1 font-medium"
-          >
-            <Download className="w-3.5 h-3.5" />
-            <span>PDF</span>
-          </a>
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="p-2 rounded-lg text-slate-400 hover:text-slate-100 hover:bg-slate-800"

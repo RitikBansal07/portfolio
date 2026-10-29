@@ -1,6 +1,6 @@
 import React from 'react';
 import { PERSONAL_INFO } from '../data/resumeData';
-import { Download, MapPin, Mail, Smartphone, Database, ShieldCheck, ArrowRight } from 'lucide-react';
+import { MapPin, Mail, Smartphone, Database, ShieldCheck, ArrowRight } from 'lucide-react';
 
 export const Hero: React.FC = () => {
   return (
@@ -57,12 +57,11 @@ export const Hero: React.FC = () => {
             </a>
 
             <a
-              href={PERSONAL_INFO.resumePdfUrl}
-              download="Ritik_Bansal_Resume.pdf"
+              href="#contact"
               className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-slate-200 bg-slate-900 hover:bg-slate-800 border border-slate-700 hover:border-slate-600 transition-all hover:scale-[1.02] active:scale-[0.98]"
             >
-              <Download className="w-5 h-5 text-indigo-400" />
-              <span>Download Resume PDF</span>
+              <Mail className="w-5 h-5 text-indigo-400" />
+              <span>Get In Touch</span>
             </a>
           </div>
         </div>

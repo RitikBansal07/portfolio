@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { PERSONAL_INFO } from '../data/resumeData';
-import { Mail, Phone, MapPin, Copy, Check, Download, Send } from 'lucide-react';
+import { Mail, Phone, MapPin, Copy, Check, Send } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './icons';
 
 export const ContactSection: React.FC = () => {
@@ -127,14 +127,6 @@ export const ContactSection: React.FC = () => {
               aria-label="LinkedIn Profile"
             >
               <LinkedinIcon className="w-5 h-5" />
-            </a>
-            <a
-              href={PERSONAL_INFO.resumePdfUrl}
-              download="Ritik_Bansal_Resume.pdf"
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold text-white bg-indigo-600 hover:bg-indigo-500 transition-colors shadow-md"
-            >
-              <Download className="w-4 h-4" />
-              <span>Download PDF</span>
             </a>
           </div>
         </div>
