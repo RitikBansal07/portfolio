@@ -25,7 +25,7 @@ export const SkillsMatrix: React.FC = () => {
             Skills & Technologies
           </h2>
           <p className="mt-3 text-base text-slate-400">
-            A comprehensive overview of mobile frameworks, analytical toolsets, databases, and automated workflows.
+            A comprehensive overview of cross-platform mobile frameworks, state architectures, native device APIs, and backend tooling.
           </p>
 
           {/* Filter Pills */}
@@ -47,7 +47,7 @@ export const SkillsMatrix: React.FC = () => {
         </div>
 
         {/* Skills Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {displayedCategories.map((category) => (
             <div
               key={category.name}
