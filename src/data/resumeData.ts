@@ -85,8 +85,8 @@ export const MOBILE_PILLAR_APPS: ProjectItem[] = [
       'Polished mobile-first UX with dark/light theme switching and haptics',
     ],
     tags: ['React Native', 'Expo', 'TypeScript', 'React 19', 'TanStack Query', 'AsyncStorage', 'Zustand'],
-    liveUrl: 'https://ritikbansal07.github.io/CareSlot/',
-    repoUrl: 'https://github.com/RitikBansal07/CareSlot',
+    liveUrl: 'https://ritikbansal07.github.io/careslot/',
+    repoUrl: 'https://github.com/RitikBansal07/careslot',
   },
   {
     id: 'pocketlog',
