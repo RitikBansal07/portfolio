@@ -61,3 +61,4 @@ export const EducationCard: React.FC = () => {
     </section>
   );
 };
+
