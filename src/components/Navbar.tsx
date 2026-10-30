@@ -1,45 +1,43 @@
 import React, { useState } from 'react';
 import { PERSONAL_INFO } from '../data/resumeData';
-import { Mail, Menu, X } from 'lucide-react';
 import { GithubIcon } from './icons';
+import { Menu, X, ArrowUpRight } from 'lucide-react';
 
 export const Navbar: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
-    { label: 'Apps Showcase', href: '#apps' },
+    { label: 'Work', href: '#projects' },
+    { label: 'Simulator', href: '#simulator' },
     { label: 'Experience', href: '#experience' },
-    { label: 'Projects', href: '#projects' },
+    { label: 'Principles', href: '#principles' },
     { label: 'Skills', href: '#skills' },
-    { label: 'Education', href: '#education' },
     { label: 'Contact', href: '#contact' },
   ];
 
   return (
-    <header className="sticky top-0 z-50 backdrop-blur-md bg-slate-950/80 border-b border-slate-800/80">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+    <header className="sticky top-0 z-50 bg-[#0c0d0e]/85 backdrop-blur-md border-b border-zinc-800/80">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
         {/* Brand */}
-        <a href="#" className="flex items-center gap-2 group">
-          <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-indigo-600 to-cyan-500 flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-indigo-500/20 group-hover:scale-105 transition-transform">
+        <a href="#" className="flex items-center gap-2.5 group">
+          <div className="w-7 h-7 rounded-md bg-zinc-800 border border-zinc-700/80 flex items-center justify-center text-xs font-mono font-bold text-zinc-100 group-hover:border-zinc-500 transition-colors">
             RB
           </div>
-          <div>
-            <span className="font-bold text-slate-100 text-lg group-hover:text-indigo-400 transition-colors">
-              {PERSONAL_INFO.name}
-            </span>
-            <span className="hidden sm:inline-block ml-2 px-2 py-0.5 text-xs font-medium rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
-              Open to Roles
-            </span>
-          </div>
+          <span className="font-medium text-sm text-zinc-200 group-hover:text-white transition-colors">
+            {PERSONAL_INFO.name}
+          </span>
+          <span className="hidden sm:inline-block text-xs font-mono text-zinc-500">
+            / React Native
+          </span>
         </a>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-slate-300">
+        <nav className="hidden md:flex items-center gap-6 text-xs font-medium text-zinc-400">
           {navLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
-              className="hover:text-indigo-400 transition-colors"
+              className="hover:text-zinc-100 transition-colors"
             >
               {link.label}
             </a>
@@ -47,63 +45,64 @@ export const Navbar: React.FC = () => {
         </nav>
 
         {/* Action CTAs */}
-        <div className="hidden lg:flex items-center gap-3">
+        <div className="hidden sm:flex items-center gap-3">
           <a
             href={PERSONAL_INFO.github}
             target="_blank"
             rel="noreferrer"
             aria-label="GitHub Profile"
-            className="p-2 rounded-lg text-slate-400 hover:text-slate-100 hover:bg-slate-800 transition-colors"
+            className="p-1.5 rounded-md text-zinc-400 hover:text-zinc-100 hover:bg-zinc-850 transition-colors"
           >
-            <GithubIcon className="w-5 h-5" />
+            <GithubIcon className="w-4 h-4" />
           </a>
           <a
             href="#contact"
-            className="px-4 py-2 rounded-lg text-sm font-medium bg-gradient-to-r from-indigo-600 to-cyan-600 hover:from-indigo-500 hover:to-cyan-500 text-white shadow-md shadow-indigo-600/20 transition-all hover:scale-[1.02] active:scale-[0.98]"
+            className="inline-flex items-center gap-1 px-3 py-1.5 rounded-md text-xs font-medium bg-zinc-100 text-zinc-900 hover:bg-white transition-colors"
           >
-            Contact
+            <span>Let's talk</span>
+            <ArrowUpRight className="w-3.5 h-3.5" />
           </a>
         </div>
 
         {/* Mobile menu toggle */}
-        <div className="md:hidden flex items-center gap-2">
+        <div className="sm:hidden flex items-center gap-2">
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2 rounded-lg text-slate-400 hover:text-slate-100 hover:bg-slate-800"
-            aria-label="Toggle navigation menu"
+            className="p-1.5 rounded text-zinc-400 hover:text-zinc-100"
+            aria-label="Toggle menu"
           >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
         </div>
       </div>
 
-      {/* Mobile dropdown menu */}
+      {/* Mobile dropdown */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-slate-900 border-b border-slate-800 px-4 pt-3 pb-5 space-y-3">
+        <div className="sm:hidden bg-[#121316] border-b border-zinc-800 px-4 py-3 space-y-2 text-sm">
           {navLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
               onClick={() => setMobileMenuOpen(false)}
-              className="block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:bg-slate-800 hover:text-indigo-400"
+              className="block py-1.5 text-zinc-300 hover:text-white"
             >
               {link.label}
             </a>
           ))}
-          <div className="pt-3 border-t border-slate-800 flex items-center justify-around">
+          <div className="pt-2 border-t border-zinc-800 flex items-center justify-between">
             <a
               href={PERSONAL_INFO.github}
               target="_blank"
               rel="noreferrer"
-              className="flex items-center gap-2 text-sm text-slate-300 hover:text-white"
+              className="flex items-center gap-2 text-xs text-zinc-400 hover:text-white"
             >
               <GithubIcon className="w-4 h-4" /> GitHub
             </a>
             <a
               href={`mailto:${PERSONAL_INFO.email}`}
-              className="flex items-center gap-2 text-sm text-slate-300 hover:text-white"
+              className="text-xs font-medium text-blue-400 hover:underline"
             >
-              <Mail className="w-4 h-4" /> Email
+              {PERSONAL_INFO.email}
             </a>
           </div>
         </div>

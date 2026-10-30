@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { PERSONAL_INFO } from '../data/resumeData';
-import { Mail, Phone, MapPin, Copy, Check, Send } from 'lucide-react';
+import { Phone, Copy, Check, ArrowUpRight } from 'lucide-react';
 import { GithubIcon } from './icons';
 
 export const ContactSection: React.FC = () => {
@@ -11,115 +11,93 @@ export const ContactSection: React.FC = () => {
     navigator.clipboard.writeText(text);
     if (type === 'email') {
       setCopiedEmail(true);
-      setTimeout(() => setCopiedEmail(false), 2500);
+      setTimeout(() => setCopiedEmail(false), 2000);
     } else {
       setCopiedPhone(true);
-      setTimeout(() => setCopiedPhone(false), 2500);
+      setTimeout(() => setCopiedPhone(false), 2000);
     }
   };
 
   return (
-    <section id="contact" className="py-20 relative">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-2xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 text-xs font-semibold uppercase tracking-wider mb-3">
-            <Mail className="w-3.5 h-3.5" />
-            <span>Get In Touch</span>
+    <section id="contact" className="py-20">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6">
+        <div className="mb-10">
+          <div className="text-xs font-mono text-zinc-500 uppercase tracking-wider mb-1">
+            07 / Contact
           </div>
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
-            Let's Build Something Exceptional
+          <h2 className="text-2xl sm:text-4xl font-bold text-white tracking-tight">
+            Get in touch.
           </h2>
-          <p className="mt-4 text-base text-slate-400">
-            Open to full-time React Native & Mobile engineering positions, contract projects, and technical collaborations.
+          <p className="mt-2 text-sm sm:text-base text-zinc-400 max-w-xl">
+            Currently interviewing for full-time React Native & Mobile engineering positions. If you have an opening or want to talk offline mobile architecture, let's connect.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* Email Card */}
-          <div className="bg-slate-900/60 border border-slate-800/80 rounded-2xl p-6 flex flex-col justify-between hover:border-indigo-500/40 transition-colors backdrop-blur-sm">
-            <div className="flex items-start justify-between gap-4">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400">
-                  <Mail className="w-5 h-5" />
-                </div>
-                <div>
-                  <h4 className="text-xs font-semibold text-slate-400 uppercase tracking-wider">Email Address</h4>
-                  <p className="text-base font-bold text-white mt-0.5 break-all">{PERSONAL_INFO.email}</p>
-                </div>
-              </div>
+        {/* Contact action cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+          {/* Email */}
+          <div className="p-5 rounded-xl bg-[#121316] border border-zinc-850 flex flex-col justify-between">
+            <div>
+              <div className="text-xs font-mono text-zinc-500 uppercase mb-1">Direct Email</div>
+              <p className="text-base font-semibold text-white break-all">{PERSONAL_INFO.email}</p>
             </div>
-
-            <div className="mt-6 flex items-center gap-3">
+            <div className="mt-4 flex items-center gap-2">
               <a
                 href={`mailto:${PERSONAL_INFO.email}`}
-                className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold text-white bg-indigo-600 hover:bg-indigo-500 transition-colors"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-semibold bg-zinc-100 text-zinc-900 hover:bg-white transition-colors"
               >
-                <Send className="w-3.5 h-3.5" />
-                <span>Send Email</span>
+                <span>Compose Mail</span>
+                <ArrowUpRight className="w-3.5 h-3.5" />
               </a>
               <button
                 onClick={() => copyToClipboard(PERSONAL_INFO.email, 'email')}
-                className="px-3.5 py-2.5 rounded-xl text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-slate-300 transition-colors flex items-center gap-1.5"
-                title="Copy Email to Clipboard"
+                className="px-3 py-1.5 rounded-md text-xs font-mono text-zinc-400 hover:text-white bg-zinc-850 hover:bg-zinc-800 transition-colors flex items-center gap-1"
               >
-                {copiedEmail ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4" />}
-                <span>{copiedEmail ? 'Copied!' : 'Copy'}</span>
+                {copiedEmail ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
+                <span>{copiedEmail ? 'Copied' : 'Copy'}</span>
               </button>
             </div>
           </div>
 
-          {/* Phone Card */}
-          <div className="bg-slate-900/60 border border-slate-800/80 rounded-2xl p-6 flex flex-col justify-between hover:border-cyan-500/40 transition-colors backdrop-blur-sm">
-            <div className="flex items-start justify-between gap-4">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400">
-                  <Phone className="w-5 h-5" />
-                </div>
-                <div>
-                  <h4 className="text-xs font-semibold text-slate-400 uppercase tracking-wider">Direct Phone</h4>
-                  <p className="text-base font-bold text-white mt-0.5">{PERSONAL_INFO.phone}</p>
-                </div>
-              </div>
+          {/* Phone */}
+          <div className="p-5 rounded-xl bg-[#121316] border border-zinc-850 flex flex-col justify-between">
+            <div>
+              <div className="text-xs font-mono text-zinc-500 uppercase mb-1">Phone / WhatsApp</div>
+              <p className="text-base font-semibold text-white">{PERSONAL_INFO.phone}</p>
             </div>
-
-            <div className="mt-6 flex items-center gap-3">
+            <div className="mt-4 flex items-center gap-2">
               <a
                 href={`tel:${PERSONAL_INFO.phone.replace(/[^0-9+]/g, '')}`}
-                className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold text-white bg-cyan-600 hover:bg-cyan-500 transition-colors"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-semibold bg-zinc-100 text-zinc-900 hover:bg-white transition-colors"
               >
                 <Phone className="w-3.5 h-3.5" />
                 <span>Call Directly</span>
               </a>
               <button
                 onClick={() => copyToClipboard(PERSONAL_INFO.phone, 'phone')}
-                className="px-3.5 py-2.5 rounded-xl text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-slate-300 transition-colors flex items-center gap-1.5"
-                title="Copy Phone to Clipboard"
+                className="px-3 py-1.5 rounded-md text-xs font-mono text-zinc-400 hover:text-white bg-zinc-850 hover:bg-zinc-800 transition-colors flex items-center gap-1"
               >
-                {copiedPhone ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4" />}
-                <span>{copiedPhone ? 'Copied!' : 'Copy'}</span>
+                {copiedPhone ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
+                <span>{copiedPhone ? 'Copied' : 'Copy'}</span>
               </button>
             </div>
           </div>
         </div>
 
-        {/* Socials & Resume Bar */}
-        <div className="mt-8 p-6 rounded-2xl bg-gradient-to-r from-slate-900 to-indigo-950/40 border border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
-            <MapPin className="w-5 h-5 text-indigo-400" />
-            <span className="text-sm font-medium text-slate-300">Based in {PERSONAL_INFO.location} • Available Globally</span>
+        {/* Footer meta */}
+        <div className="pt-6 border-t border-zinc-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-zinc-500">
+          <div>
+            © {new Date().getFullYear()} {PERSONAL_INFO.name} • Handcrafted in React & TypeScript
           </div>
-
-          <div className="flex items-center gap-3">
-            <a
-              href={PERSONAL_INFO.github}
-              target="_blank"
-              rel="noreferrer"
-              className="p-2.5 rounded-xl bg-slate-800 text-slate-300 hover:text-white hover:bg-slate-700 transition-colors"
-              aria-label="GitHub Profile"
-            >
-              <GithubIcon className="w-5 h-5" />
-            </a>
-          </div>
+          <a
+            href={PERSONAL_INFO.github}
+            target="_blank"
+            rel="noreferrer"
+            className="flex items-center gap-1.5 text-zinc-400 hover:text-white transition-colors"
+          >
+            <GithubIcon className="w-3.5 h-3.5" />
+            <span>View code on GitHub</span>
+          </a>
         </div>
       </div>
     </section>
