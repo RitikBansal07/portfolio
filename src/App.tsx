@@ -1,26 +1,22 @@
 import React from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
-import { ProjectCaseStudies } from './components/ResumeProjects';
+import { ProjectList } from './components/ResumeProjects';
 import { AppSimulator } from './components/AppSimulator';
-import { EngineeringPrinciples } from './components/EngineeringPrinciples';
 import { ExperienceTimeline } from './components/ExperienceTimeline';
-import { SkillsMatrix } from './components/SkillsMatrix';
-import { EducationCard } from './components/EducationCard';
+import { SkillsAndEducation } from './components/SkillsMatrix';
 import { ContactSection } from './components/ContactSection';
 
 export const App: React.FC = () => {
   return (
-    <div className="min-h-screen bg-[#0c0d0e] text-zinc-100 selection:bg-blue-600 selection:text-white">
+    <div className="min-h-screen bg-[#0c0d0e] text-zinc-100 selection:bg-zinc-700 selection:text-white">
       <Navbar />
       <main>
         <Hero />
-        <ProjectCaseStudies />
+        <ProjectList />
         <AppSimulator />
-        <EngineeringPrinciples />
         <ExperienceTimeline />
-        <SkillsMatrix />
-        <EducationCard />
+        <SkillsAndEducation />
         <ContactSection />
       </main>
     </div>
